@@ -1,4 +1,12 @@
-h1 Users list
-ul
-	each user in users
-		li= user.name
+head
+	script.
+body
+	h1(id="demo") Users list
+	a(href="/users/create") new
+	form(action="/users/search", method="GET")
+		input(type="text", name="q", value= query)
+		button Search
+
+	ul
+		each user in users
+			li= user.name
