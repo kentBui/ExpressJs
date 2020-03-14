@@ -1,12 +1,15 @@
-head
-	script.
-body
+extends ../layouts/common
+
+block content
 	h1(id="demo") Users list
 	a(href="/users/create") new
-	form(action="/users/search", method="GET")
-		input(type="text", name="q", value= query)
-		button Search
-
-	ul
+	form(action="/users/search", method="GET", class="d-flex")
+		input(class="form-control mr-3", type="text", name="q")
+		button(class="btn btn-primary btn-outline-warning") Search
+	a(href="/users/delete") delete
+	ol
 		each user in users
-			li= user.name
+			li
+				span= user.name
+				span &nbsp;
+				a(href='/users/' + user.id) View

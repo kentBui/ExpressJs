@@ -1,0 +1,8 @@
+extends ../layouts/common
+
+block content
+	h1 Delete user
+	form(action="/users/delete", method="post")
+		label which name you want to delete
+		input(type="text", name="name")
+		button delete

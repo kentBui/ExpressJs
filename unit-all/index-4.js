@@ -5,9 +5,10 @@ const bodyParser = require('body-parser')
 var app = express();
 var port = 3800;
 var users = [
-		{id: 1, name: 'Kent1'},
-		{id: 2, name: 'thinh'},
-		{id: 3, name: 'tam'}
+		{name: 'Kent1'},
+		{name: 'thinh'},
+		{name: 'kem'},
+		{name: 'tam'}
 		];
 app.set('view engine', 'pug');
 app.set('views','./views');
@@ -15,9 +16,7 @@ app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.get('/', (req, res)=>{
-	res.render('index-3',{
-		name: 'Kent'
-	});
+	res.render('index-3');
 });
 
 app.get('/users', (req,res)=>{

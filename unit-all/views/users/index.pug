@@ -1,4 +1,7 @@
-h1 Users List
-ul
-	each user in users
-		li= user.id + ':' + user.name
+extends ../layouts/common
+
+block content
+	h1 Users List
+	ul
+		each user in users
+			li= user.id + ':' + user.name
